@@ -1,0 +1,149 @@
+<head>
+    <title>
+        Login And Registration</title>
+
+</head>
+<style>
+    body {
+        background-image: url("https://churchlifejournal.nd.edu/assets/319137/1200x/supreme_court_inside.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .login-page {
+        width: 460px;
+        padding: 10% 0 0;
+        margin: auto;
+    }
+    
+    .form {
+        position: relative;
+        z-index: 1;
+        background: rgba(22, 22, 22, 0.8);
+        max-width: 360px;
+        padding: 45px;
+        text-align: center;
+        margin: 0 auto 100px;
+        box-shadow: 0px 0px 10px 10px rgb(49, 48, 48);
+    }
+    
+    .form input {
+        font-family: "Roboto", sans-serif;
+        outline: 1;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+    
+    .form button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #ffffff;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    
+    p {
+        color: #ffffff;
+        font-size: 17px;
+    }
+    
+    .form button:hover,
+    .form button:active {
+        background: #43A047;
+    }
+    
+    .me {
+        color: #f2f2f2;
+        font-weight: bold;
+    }
+    
+    .form .message {
+        margin: 15px 0 0;
+        color: aliceblue;
+        font-size: 12px;
+    }
+    
+    .form .message a {
+        color: #4CAF50;
+        text-decoration: none;
+    }
+    
+    .form .register-form {
+        display: none;
+    }
+</style>
+
+<body>
+
+
+    <div class="login-page">
+        <div class="form">
+            <p> {{errorMessage}} </p>
+            <form class="register-form">
+                <input type="text" placeholder="user name" />
+                <input type="text" placeholder="password" />
+                <input type="text" placeholder="email id" />
+                <button>
+                   Create
+               </button>
+                <p class="message">
+                    Already Register ? <a href="#">
+                       Login
+                   </a>
+                </p>
+            </form>
+
+            <form class="login-form">
+
+
+                <input [(ngModel)]="username" type="text" name="username" placeholder="user name" />
+
+
+                <input [(ngModel)]="pass" type="password" name="pass" placeholder="password" />
+
+                <button (click)="login()"> login </button>
+                <!-- one way or event binding where click is event such thst when we click login button it will call an function "login"-->
+
+
+
+                <p class="message"> Not register ?
+                    <a href="http://localhost:4200/registration">
+                        Register
+                    </a>
+
+                </p>
+
+
+
+
+            </form>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+    <script>
+        $('.message a').click(function() {
+            $('form').animate({
+                height: "toggle",
+                opacity: "toggle"
+            }, "slow");
+        });
+    </script>
+
+    <br>
+
+
+</body>

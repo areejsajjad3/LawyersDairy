@@ -1,0 +1,134 @@
+<style>
+    body {
+        background-image: url("https://pmcdeadline2.files.wordpress.com/2017/12/scales-of-justice-gavel.jpg?crop=0px%2C107px%2C1000px%2C560px&resize=681%2C383");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .wait {
+        font-weight: 700;
+    }
+    
+    .table {
+        color: rgb(245, 244, 235);
+        font-weight: 420;
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .nav-item {
+        font-weight: bold;
+        font-size: 14px;
+    }
+    
+    h1 {
+        color: white;
+        font-size: 71px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    
+    h2 {
+        color: white;
+        font-size: 45px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    
+    h2 span {
+        color: #f4c613;
+        font-weight: 700;
+    }
+    
+    .adjust {
+        padding-left: 550px;
+        text-align: center;
+    }
+    
+    .my {
+        padding-right: 3%;
+    }
+</style>
+
+<body>
+
+
+    <table class="table table-hover">
+        <div class="my  container">
+            <h1>Lawyer </h1>
+            <h2> Creative
+                <span>Diaries</span>
+            </h2>
+            <div class="adjust">
+                <div id="home-btn">
+
+                    <td>
+                        <a class="btn btn-warning text-white " role="button" href="http://localhost:4200/client/create">Create Diary</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning text-white " role="button" href="http://localhost:4200/clients">See Records</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning text-white " role="button" href="http://localhost:4200/calender">Upcoming events</a>
+                    </td>
+
+
+                </div>
+            </div>
+
+            <div class="me">
+                <thead>
+                    <tr>
+
+
+                        <td>Client Name</td>
+                        <td>Client Bio</td>
+                        <td>Client Age</td>
+                        <td>Client Address</td>
+                        <td>Case Title</td>
+                        <td>Last Hearing Date</td>
+                        <td>Next Hearing Date</td>
+                        <td>Court Name</td>
+                        <td>Judge Name</td>
+                        <td>Judge Remarks</td>
+                        <td>lawyer Remarks</td>
+                        <td>Actions</td>
+
+                    </tr>
+
+                </thead>
+
+            </div>
+
+            <tbody>
+                <tr *ngFor="let client of clients; let i = index">
+                    <td>{{ client.ClientName }}</td> 
+                    <td>{{ client.ClientBio }}</td>
+                    <td>{{ client.ClientAge }}</td>
+                    <td>{{ client.ClientAddress}}</td>
+
+                    <td>{{ client.CaseTitle }}</td>
+                    <td>{{ client.LastHearingDate }}</td>
+                    <td>{{ client.NextHearingDate }}</td>
+                    <td>{{ client.CourtName }}</td>
+                    <td>{{ client.JudgeName }}</td>
+                    <td>{{ client.JudgeRemarks }}</td>
+                    <td>{{ client.lr }}</td>
+
+                    <td>
+                        <a [routerLink]="['/edit', client._id]" class="btn btn-warning">Edit</a>
+                    </td>
+                    <td>
+                        <a (click)="deleteClient(client._id,i) " class="btn btn-danger ">Delete </a> </td>
+
+                </tr>
+
+            </tbody>
+
+        </div>
+    </table>
+
+</body>

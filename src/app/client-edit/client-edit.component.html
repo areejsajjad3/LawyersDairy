@@ -1,0 +1,270 @@
+<style>
+    .card {
+        background-image: url("https://www.supremecourt.gov.pk/wp-content/uploads/2019/09/IMG_2548.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .me {
+        background: rgba(0, 0, 0, 0.8);
+        box-shadow: 0px 0px 8px 8px rgb(49, 48, 48);
+    }
+    
+    .form-group label {
+        color: rgb(238, 236, 236);
+        font-weight: 500px;
+        font-size: 17px;
+    }
+    
+    .form-group input {
+        background-color: rgba(252, 250, 250, 0.6);
+        width: 750px;
+        font-weight: bold;
+        color: black;
+    }
+    
+    .form-group textarea {
+        background-color: rgba(252, 250, 250, 0.6);
+        width: 750px;
+        color: black;
+        font-weight: bold;
+        height: 100px
+    }
+    
+    .form-group button {
+        color: black;
+        font-weight: bold;
+    }
+    
+    .mysize {
+        width: 750px;
+    }
+    
+    h1 {
+        color: white;
+        font-size: 41px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    
+    h2 {
+        color: white;
+        font-size: 45px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    
+    h2 span {
+        font-size: 67px;
+        color: #f4c613;
+        font-weight: 800;
+    }
+</style>
+
+
+
+
+<div class="card">
+    <div class="container me">
+
+        <div class="container">
+            <h1>Update </h1>
+            <h2> Your
+                <span>Diary</span>
+            </h2>
+            <div class="card-body">
+                <form [formGroup]="angForm" novalidate>
+                    <div class="form-group">
+                        <label class="col-md-4">Client Name:-</label>
+                        <input type="text" class="form-control" formControlName="ClientName" #ClientName [(ngModel)]="client.ClientName" />
+                    </div>
+                    <div class="mysize">
+                        <div *ngIf="
+             angForm.controls['ClientName'].invalid && 
+             (angForm.controls['ClientName'].dirty ||
+             angForm.controls['ClientName'].touched)
+             " class="alert alert-danger">
+                            <div *ngIf="angForm.controls[ 'ClientName'].errors.required">
+                                Client Name is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4">Client Bio:-</label>
+                        <textarea class="form-control" row="7" cols="5" formControlName="ClientBio" #ClientBio [(ngModel)]="client.ClientBio">
+             </textarea>
+                    </div>
+                    <div class="mysize">
+                        <div *ngIf="
+             angForm.controls['ClientBio'].invalid && 
+             (angForm.controls['ClientBio'].dirty ||
+             angForm.controls['ClientBio'].touched)
+             " class="alert alert-danger">
+                            <div *ngIf="angForm.controls[ 'ClientBio'].errors.required">
+                                Client Bio is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4">Client Age:-</label>
+                        <input type="text" class="form-control" formControlName="ClientAge" #ClientAge [(ngModel)]="client.ClientAge" />
+                    </div>
+                    <div class="mysize">
+                        <div *ngIf="
+             angForm.controls['ClientAge'].invalid && 
+             (angForm.controls['ClientAge'].dirty ||
+             angForm.controls['ClientAge'].touched)
+             " class="alert alert-danger">
+                            <div *ngIf="angForm.controls[ 'ClientAge'].errors.required">
+                                Client Age is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4">Client Address:-</label>
+                        <input type="text" class="form-control" formControlName="ClientAddress" #ClientAddress [(ngModel)]="client.ClientAddress" />
+                    </div>
+                    <div class="mysize">
+                        <div *ngIf="
+             angForm.controls['ClientAddress'].invalid && 
+             (angForm.controls['ClientAddress'].dirty ||
+             angForm.controls['ClientAddress'].touched)
+             " class="alert alert-danger">
+                            <div *ngIf="angForm.controls[ 'ClientAddress'].errors.required">
+                                Client Address is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4">Case Title:-</label>
+                        <input type="text" class="form-control" formControlName="CaseTitle" #CaseTitle [(ngModel)]="client.CaseTitle" />
+                    </div>
+                    <div class="mysize">
+                        <div *ngIf="
+             angForm.controls['CaseTitle'].invalid && 
+             (angForm.controls['CaseTitle'].dirty ||
+             angForm.controls['CaseTitle'].touched)
+             " class="alert alert-danger">
+                            <div *ngIf="angForm.controls[ 'CaseTitle'].errors.required">
+                                Case Title is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4">Last Hearing Date;-</label>
+                        <input type="text" class="form-control" formControlName="LastHearingDate" #LastHearingDate [(ngModel)]="client.LastHearingDate" />
+                    </div>
+                    <div class="mysize">
+                        <div *ngIf="
+             angForm.controls['LastHearingDate'].invalid && 
+             (angForm.controls['LastHearingDate'].dirty ||
+             angForm.controls['LastHearingDate'].touched)
+             " class="alert alert-danger">
+                            <div *ngIf="angForm.controls[ 'LastHearingDate'].errors.required">
+                                Last Hearing Date is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4">Next Hearing Date:-</label>
+                        <input type="text" class="form-control" formControlName="NextHearingDate" #NextHearingDate [(ngModel)]="client.NextHearingDate" />
+                    </div>
+                    <div class="mysize">
+                        <div *ngIf="
+                 angForm.controls['NextHearingDate'].invalid && 
+                 (angForm.controls['NextHearingDate'].dirty ||
+                 angForm.controls['NextHearingDate'].touched)
+                 " class="alert alert-danger">
+                            <div *ngIf="angForm.controls[ 'NextHearingDate'].errors.required">
+                                Next Hearing Date is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4">Court Name:-</label>
+                        <input type="text" class="form-control" formControlName="CourtName" #CourtName [(ngModel)]="client.CourtName" />
+                    </div>
+                    <div class="mysize">
+                        <div *ngIf="
+             angForm.controls['CourtName'].invalid && 
+             (angForm.controls['CourtName'].dirty ||
+             angForm.controls['CourtName'].touched)
+             " class="alert alert-danger">
+                            <div *ngIf="angForm.controls[ 'CourtName'].errors.required">
+                                Court Name is required.
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4">Judge Name:-</label>
+                        <input type="text" class="form-control" formControlName="JudgeName" #JudgeName [(ngModel)]="client.JudgeName" />
+                    </div>
+                    <div class="mysize">
+                        <div *ngIf="
+                 angForm.controls['JudgeName'].invalid && 
+                 (angForm.controls['JudgeName'].dirty ||
+                 angForm.controls['JudgeName'].touched)
+                 " class="alert alert-danger">
+                            <div *ngIf="angForm.controls[ 'JudgeName'].errors.required">
+                                Judge Name is required.
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4">Judge Remarks:-</label>
+                        <input type="text" class="form-control" formControlName="JudgeRemarks" #JudgeRemarks [(ngModel)]="client.JudgeRemarks" />
+                    </div>
+                    <div class="mysize">
+                        <div *ngIf="
+                     angForm.controls['JudgeRemarks'].invalid && 
+                     (angForm.controls['JudgeRemarks'].dirty ||
+                     angForm.controls['JudgeRemarks'].touched)
+                     " class="alert alert-danger">
+                            <div *ngIf="angForm.controls[ 'JudgeRemarks'].errors.required">
+                                Judge Remarks is required.
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4">lawyer Remarks:-</label>
+                        <input type="text" class="form-control" formControlName="lr" #lr [(ngModel)]="client.lr" />
+                    </div>
+                    <div class="mysize">
+                        <div *ngIf="
+                         angForm.controls['lr'].invalid && 
+                         (angForm.controls['lr'].dirty ||
+                         angForm.controls['lr'].touched)
+                         " class="alert alert-danger">
+                            <div *ngIf="angForm.controls[ 'lr'].errors.required">
+                                lawyer Remarks is required.
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-warning btn-lg" [disabled]="angForm.pristine || angForm.invalid" (click)="updateClient(ClientName.value,  ClientBio.value, ClientAge.value,ClientAddress.value,CaseTitle.value,LastHearingDate.value,NextHearingDate.value,CourtName.value,JudgeName.value,JudgeRemarks.value,lr.value)">
+            Update Diary
+            </button>
+                        <br>
+                        <br>
+
+
+                        <a class="btn btn-primary text-white btn-lg " role="button" href="http://localhost:4200/clients"> Don't update
+                  </a>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
